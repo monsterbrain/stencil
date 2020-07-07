@@ -1,20 +1,19 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 
-apply plugin: 'com.github.dcendents.android-maven'
-group = "com.github.thoughtbot"
+//apply plugin: 'com.github.dcendents.android-maven'
+//group = "com.github.thoughtbot"
 
 android {
-  compileSdkVersion 24
-  buildToolsVersion "24.0.2"
+  compileSdkVersion 28
 
   defaultConfig {
     minSdkVersion 19
-    targetSdkVersion 24
+    targetSdkVersion 28
     versionCode 1
     versionName "1.0"
 
-    testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
   }
   buildTypes {
     release {
@@ -29,11 +28,11 @@ android {
 
 dependencies {
   compile fileTree(dir: 'libs', include: ['*.jar'])
-  compile 'com.android.support:appcompat-v7:24.2.1'
+  api 'androidx.appcompat:appcompat:1.1.0'
 
   //kotlin
-  compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+  api "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 
   //testing
-  testCompile 'junit:junit:4.12'
+  testImplementation 'junit:junit:4.12'
 }

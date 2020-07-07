@@ -7,7 +7,7 @@
   android:orientation="vertical">
 
   <com.thoughtbot.stencil.StencilView
-    android:id="@+id/stencil_sample"
+    android:id="@+id/defaultStencil"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     app:sv_strokeColor="@android:color/darker_gray"
@@ -16,7 +16,7 @@
     app:sv_strokeWidth="10" />
 
   <com.thoughtbot.stencil.StencilView
-    android:id="@+id/stencil_sample_with_custom_font"
+    android:id="@+id/customFontStencil"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     app:sv_strokeColor="@android:color/darker_gray"

@@ -6,7 +6,7 @@ import android.graphics.Typeface
 import android.view.View
 import uk.co.chrisjenx.calligraphy.TypefaceUtils
 
-inline fun <reified T : View> Activity.find(id: Int): T = findViewById(id) as T
+// inline fun <reified T : View> Activity.find(id: Int): T = findViewById<T>(id)
 
 val Context.brusherFont: Typeface
   get() = getFont("Brusher-Regular.otf")

@@ -1,24 +1,20 @@
 package com.thoughtbot.sample
 
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
 import com.thoughtbot.sample.extensions.brusherFont
-import com.thoughtbot.sample.extensions.find
-import com.thoughtbot.stencil.StencilView
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
-
-  val regular: StencilView by lazy { find<StencilView>(R.id.stencil_sample) }
-  val customFont: StencilView by lazy { find<StencilView>(R.id.stencil_sample_with_custom_font) }
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.activity_main)
 
     //set custom font
-    customFont.paint.typeface = brusherFont
+    customFontStencil.paint.typeface = brusherFont
   }
 
   override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -29,9 +25,8 @@ class MainActivity : AppCompatActivity() {
   override fun onOptionsItemSelected(item: MenuItem?): Boolean {
     when (item?.itemId) {
       R.id.play -> {
-        regular.animatePath()
-        customFont.animatePath()
-
+        defaultStencil.animatePath()
+        customFontStencil.animatePath()
       }
     }
     return super.onOptionsItemSelected(item)
